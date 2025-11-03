@@ -148,11 +148,6 @@ It features:
 
 ---
 
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
-Feel free to use, adapt, and contribute.
-
 ---
 
 ## 🤝 Contributing
