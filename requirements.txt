@@ -17,6 +17,7 @@ pypdf             # lightweight PDF reader
 unstructured      # better PDF parsing (optional, more accurate)
 beautifulsoup4    # to extract hyperlinks from PDF text (if HTML-like)
 lxml              # HTML parsing backend
+faiss-cpu
 
 # Utilities
 tqdm              # progress bars
@@ -25,3 +26,4 @@ langchain
 langchain-core 
 langchain-community 
 langchain-text-splitters
+
