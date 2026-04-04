@@ -13,7 +13,7 @@ from langchain_core.messages import (
 from langgraph.graph.message import add_messages
 from langgraph.graph import StateGraph, START, END
 from tools import analyze_image, explain_result, general_chat
-from langchain.memory.buffer import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory
 
 load_dotenv()
 
