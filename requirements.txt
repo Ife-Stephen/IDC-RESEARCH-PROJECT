@@ -1,4 +1,4 @@
-streamlit
+streamlit==1.32.0
 python-dotenv
 openai
 transformers
@@ -9,7 +9,6 @@ pillow            # for image loading
 numpy
 gdown
 langgraph
-langchain-core
 accelerate        # improves loading & inference
 sentence-transformers  # optional, for embeddings
 # PDF & text extraction
@@ -22,8 +21,8 @@ faiss-cpu
 # Utilities
 tqdm              # progress bars
 
-langchain
-langchain-core 
-langchain-community 
+langchain==0.1.20
+langchain-core==0.1.52
+langchain-community==0.0.38
 langchain-text-splitters
-langchain-openai
+langchain-openai==0.1.6
