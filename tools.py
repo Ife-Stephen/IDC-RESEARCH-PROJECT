@@ -38,13 +38,26 @@ _clip_model = CLIPModel.from_pretrained(CLIP_MODEL_ID).to(_clip_device)
 _clip_processor = CLIPProcessor.from_pretrained(CLIP_MODEL_ID)
 
 # Load or build vectorstore
-if os.path.exists("rag_store/index.faiss"):
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    _vectordb = FAISS.load_local("rag_store", embeddings, allow_dangerous_deserialization=True)
-else:
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
+try:
+    if os.path.exists("rag_store/index.faiss"):
+        _vectordb = FAISS.load_local(
+            "rag_store",
+            embeddings,
+            allow_dangerous_deserialization=True
+        )
+    else:
+        raise FileNotFoundError("No local FAISS index found")
+
+except Exception as e:
+    print(f"⚠️ Rebuilding vector store due to error: {e}")
+    
     from ingest_pdfs import build_vectorstore
     _vectordb = build_vectorstore()
 
+# Create retriever
 _retriever = _vectordb.as_retriever(search_kwargs={"k": 5})
 
 @tool
