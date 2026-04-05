@@ -162,6 +162,6 @@ It features:
 
 ### 👏 Acknowledgments
 
-Thanks to the Hugging Face open models community, PyTorch, Next.js and TailwindCSS for enabling this development.
+Thanks to the Hugging Face open models community for enabling this development.
 
 ---
